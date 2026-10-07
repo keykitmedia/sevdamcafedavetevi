@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
+import { contact, img } from "../constants";
 
 const VideoPinSection = () => {
   const isMobile = useMediaQuery({
@@ -36,18 +37,25 @@ const VideoPinSection = () => {
         }}
         className="size-full video-box"
       >
-        <video src={`${import.meta.env.BASE_URL}videos/pin-video.mp4`} playsInline muted loop autoPlay />
+        <img
+          src={img("salon-genis.jpg")}
+          alt="Sevda'M Davet Evi salonundan genel görünüm"
+          loading="lazy"
+          className="pin-photo"
+        />
 
-        <div className="abs-center md:scale-100 scale-200">
-          <img src={`${import.meta.env.BASE_URL}images/circle-text.svg`} alt="" className="spin-circle" />
+        <a
+          href={contact.instagramHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram'da Sevda'M Davet Evi"
+          className="abs-center md:scale-100 scale-200"
+        >
+          <img src={`${import.meta.env.BASE_URL}images/sevdam/circle-text.svg`} alt="" className="spin-circle" />
           <div className="play-btn">
-            <img
-              src={`${import.meta.env.BASE_URL}images/play.svg`}
-              alt=""
-              className="size-[3vw] ml-[.5vw]"
-            />
+            <span className="text-[3vw] leading-none text-milk">♥</span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   );

@@ -2,12 +2,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { contact, img } from "../constants";
 
 const HeroSection = () => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
-
   const isTablet = useMediaQuery({
     query: "(max-width: 1024px)",
   });
@@ -64,31 +61,15 @@ const HeroSection = () => {
   return (
     <section className="bg-main-bg">
       <div className="hero-container">
-        {isTablet ? (
-          <>
-            {isMobile && (
-              <img
-                src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-                className="absolute bottom-40 size-full object-cover"
-              />
-            )}
-            <img
-              src={`${import.meta.env.BASE_URL}images/hero-img.png`}
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
-            />
-          </>
-        ) : (
-          <video
-            src={`${import.meta.env.BASE_URL}videos/hero-bg.mp4`}
-            autoPlay
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        )}
+        <img
+          src={img(isTablet ? "hero-neon-dik.jpg" : "hero-neon.jpg")}
+          alt="Sevda'M Davet Evi'nde Hikayemiz Başlıyor neon yazılı fiyonklu sahne"
+          className="hero-photo"
+        />
+        <div className="hero-overlay" />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
-            <h1 className="hero-title">Freaking Delicious</h1>
+            <h1 className="hero-title">Hikayeniz</h1>
           </div>
           <div
             style={{
@@ -97,18 +78,23 @@ const HeroSection = () => {
             className="hero-text-scroll"
           >
             <div className="hero-subtitle">
-              <h1>Protein + Caffine </h1>
+              <h1>Burada Başlıyor</h1>
             </div>
           </div>
 
           <h2>
-            Live life to the fullest  with SPYLT: Shatter boredom and embrace
-            your inner kid with every deliciously smooth chug.
+            Kız istemeden kına gecesine, en özel gününüzü Ünye&apos;nin kalbinde
+            çiçeklerle, ışıklarla ve 250 kişiye kadar sevdiklerinizle kutlayın.
           </h2>
 
-          <div className="hero-button">
-            <p>Chug a SPYLT</p>
-          </div>
+          <a
+            href={contact.whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            className="hero-button"
+          >
+            <p>Tarihinizi Ayırtın</p>
+          </a>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { nutrientLists } from "../constants";
+import { nutrientLists, img, contact } from "../constants";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -67,18 +67,17 @@ const NutritionSection = () => {
   return (
     <section className="nutrition-section">
       <img
-        src={`${import.meta.env.BASE_URL}images/slider-dip.png`}
-        alt=""
-        className="w-full object-cover"
+        src={img("salon-soz.jpg")}
+        alt="Sevda'M Davet Evi söz ve nişan salonu"
+        loading="lazy"
+        className="big-img"
       />
 
-      <img src={`${import.meta.env.BASE_URL}images/big-img.png`} alt="" className="big-img" />
-
-      <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
+      <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 pt-24 md:pt-0">
         <div className="relative inline-block md:translate-y-20">
           <div className="general-title relative flex flex-col justify-center items-center gap-24">
             <div className="overflow-hidden place-self-start">
-              <h1 className="nutrition-title">It still does</h1>
+              <h1 className="nutrition-title">Rakamlarla</h1>
             </div>
             <div
               style={{
@@ -87,7 +86,7 @@ const NutritionSection = () => {
               className="nutrition-text-scroll place-self-start"
             >
               <div className="bg-yellow-brown pb-5 md:pt-0 pt-3 md:px-5 px-3">
-                <h2 className="text-milk-yellow">Body Good</h2>
+                <h2 className="text-milk-yellow">Sevda'M</h2>
               </div>
             </div>
           </div>
@@ -96,8 +95,11 @@ const NutritionSection = () => {
         <div className="flex md:justify-center items-center translate-y-5">
           <div className="md:max-w-xs max-w-md">
             <p className="text-lg md:text-right text-balance font-paragraph">
-              Milk contains a wide array of nutrients, including vitamins,
-              minerals, and protein, and this is lactose free
+              Sami Soysal Caddesi&apos;nde, kolay ulaşılan bir konumda; ister
+              kalabalık bir kına gecesi, ister samimi bir kız isteme.{" "}
+              <a href={contact.mapsHref} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                Yol tarifi al
+              </a>
             </p>
           </div>
         </div>
@@ -107,9 +109,9 @@ const NutritionSection = () => {
             {lists.map((nutrient, index) => (
               <div key={index} className="relative flex-1 col-center">
                 <div>
-                  <p className="md:text-lg font-paragraph">{nutrient.label}</p>
-                  <p className="font-paragraph text-sm mt-2">up to</p>
-                  <p className="text-2xl md:text-4xl tracking-tighter font-bold">
+                  <p className="md:text-lg text-sm font-paragraph leading-tight">{nutrient.label}</p>
+                  <p className="font-paragraph md:text-sm text-xs mt-2">{nutrient.sub}</p>
+                  <p className="text-xl md:text-4xl tracking-tighter font-bold whitespace-nowrap">
                     {nutrient.amount}
                   </p>
                 </div>

@@ -72,22 +72,12 @@ const FlavorSlider = () => {
             className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/${flavor.color}-bg.svg`}
-              alt=""
-              className="absolute bottom-0"
+              src={flavor.img}
+              alt={`Sevda'M Davet Evi ${flavor.name} dekoru`}
+              loading="lazy"
+              className="flavor-photo"
             />
-
-            <img
-              src={`${import.meta.env.BASE_URL}images/${flavor.color}-drink.webp`}
-              alt=""
-              className="drinks"
-            />
-
-            <img
-              src={`${import.meta.env.BASE_URL}images/${flavor.color}-elements.webp`}
-              alt=""
-              className="elements"
-            />
+            <div className="flavor-shade" />
 
             <h1>{flavor.name}</h1>
           </div>
