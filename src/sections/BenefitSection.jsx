@@ -74,7 +74,7 @@ const BenefitSection = () => {
               borderColor={"#222123"}
             />
             <ClipPathTitle
-              title={"Ünye'nin merkezinde"}
+              title={"Merkezi konum"}
               color={"#2b2627"}
               bg={"#e6cfa7"}
               className={"fourth-title"}

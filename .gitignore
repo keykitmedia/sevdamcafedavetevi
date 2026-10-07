@@ -143,3 +143,6 @@ vite.config.ts.timestamp-*
 
 # Orijinal fotoğraflar (konum/EXIF bilgisi içerir); sitede public/images/sevdam kullanılıyor
 sevdamfoto/
+
+# Vite önbelleği
+.vite/
